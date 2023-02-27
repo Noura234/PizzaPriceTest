@@ -1,14 +1,10 @@
 ﻿namespace PizzaPrice.Ingredients
 {
-    public class FourmeAmbert
+    public class FourmeAmbert : Ingredient
     {
-        private int _price;
-        private string _category;
-
-        public FourmeAmbert(int price, string category)
+        public FourmeAmbert() : base(4, "Cheese")
         {
-            this._price = price;
-            this._category = category;
+
         }
     }
 }

@@ -13,13 +13,26 @@ namespace PizzaPrice
         {
             if (pizzaName.Equals("FourCheeseTomato"))
             {
-                var pizza = new FourCheeseTomato(new List<object>()
+                var pizza = new FourCheeseTomato(new List<Ingredient>()
                 {
-                    new Tomato(1, "Sauce"),
-                    new Mozarella(2, "Cheese"),
-                    new Goat(4, "Cheese"),
-                    new Emmental(2, "Cheese"),
-                    new FourmeAmbert(4, "Cheese"),
+                    new Tomato(),
+                    new Mozarella(),
+                    new Goat(),
+                    new Emmental(),
+                    new FourmeAmbert(),
+                });
+                var pizzaPrice = pizza.GetIngredientsPrice();
+                return pizzaPrice;
+            }
+            else if (pizzaName.Equals("FourCheeseFreshCream"))
+            {
+                var pizza = new FourCheeseFreshCream(new List<Ingredient>()
+                {
+                    new FreshCream(),
+                    new Mozarella(),
+                    new Goat(),
+                    new Emmental(),
+                    new FourmeAmbert(),
                 });
                 var pizzaPrice = pizza.GetIngredientsPrice();
                 return pizzaPrice;

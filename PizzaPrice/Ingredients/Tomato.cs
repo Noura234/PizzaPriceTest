@@ -1,14 +1,9 @@
 ﻿namespace PizzaPrice.Ingredients
 {
-    public class Tomato
+    public class Tomato : Ingredient
     {
-        private readonly int _price;
-        private readonly string _category;
-
-        public Tomato(int price, string category)
+        public Tomato() : base(1, "Sauce")
         {
-            this._price = price;
-            this._category = category;
         }
     }
 }

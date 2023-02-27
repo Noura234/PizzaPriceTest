@@ -1,14 +1,9 @@
 ﻿namespace PizzaPrice.Ingredients
 {
-    public class Emmental
+    public class Emmental : Ingredient
     {
-        private int _price;
-        private string _category;
-
-        public Emmental(int price, string category)
+        public Emmental() : base(2, "Cheese")
         {
-            this._price = price;
-            this._category = category;
         }
     }
 }

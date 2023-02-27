@@ -1,14 +1,9 @@
 ﻿namespace PizzaPrice.Ingredients
 {
-    public class Mozarella
+    public class Mozarella : Ingredient
     {
-        private int _price;
-        private string _category;
-
-        public Mozarella(int price, string category)
+        public Mozarella() : base(2, "Cheese")
         {
-            this._price = price;
-            this._category = category;
         }
     }
 }
