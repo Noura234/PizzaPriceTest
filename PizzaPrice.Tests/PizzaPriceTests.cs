@@ -5,7 +5,7 @@ namespace PizzaPrice.Tests
     public class PizzaPriceTests
     {
         [Fact]
-        public void FourCheeseTomatoPizzaCost_Should_Return_Ingredients_Prices_13()
+        public void FourCheeseTomatoPizzaCost_Should_Return_Ingredients_Prices()
         {
             //arrange
             var pizzaName = PizzaNameEnum.FourCheeseTomato;
@@ -15,11 +15,11 @@ namespace PizzaPrice.Tests
             var pizzaPrice = pizzaService.GetPizzaPrice(pizzaName); 
 
             //assert
-            Assert.Equal(13, pizzaPrice);
+            Assert.Equal(1 + 2 + 4 + 2 +4, pizzaPrice);
         }
 
         [Fact]
-        public void FourCheeseFreshCreamPizzaCost_Should_Return_Ingredients_Prices_13_5()
+        public void FourCheeseFreshCreamPizzaCost_Should_Return_Ingredients_Prices()
         {
             //arrange
             var pizzaName = PizzaNameEnum.FourCheeseFreshCream;
@@ -29,7 +29,7 @@ namespace PizzaPrice.Tests
             var pizzaPrice = pizzaService.GetPizzaPrice(pizzaName);
 
             //assert
-            Assert.Equal(13.5m, pizzaPrice);
+            Assert.Equal(1.5m + 2 + 4 + 2 + 4, pizzaPrice);
         }
 
         [Fact]
