@@ -3,9 +3,9 @@
     public abstract class Ingredient
     {
         private readonly decimal _price;
-        private readonly string _category;
+        private readonly IngredientCategoryEnum _category;
 
-        public Ingredient(decimal price, string category)
+        public Ingredient(decimal price, IngredientCategoryEnum category)
         {
             this._price = price;
             this._category = category;

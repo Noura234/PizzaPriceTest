@@ -2,7 +2,7 @@
 {
     public class RoastChicken : Ingredient
     {
-        public RoastChicken() : base(6, "Meat")
+        public RoastChicken() : base(6, IngredientCategoryEnum.Meat)
         {
 
         }

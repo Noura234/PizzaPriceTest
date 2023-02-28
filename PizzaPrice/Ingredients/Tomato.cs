@@ -2,7 +2,7 @@
 {
     public class Tomato : Ingredient
     {
-        public Tomato() : base(1, "Sauce")
+        public Tomato() : base(1, IngredientCategoryEnum.Sauce)
         {
         }
     }

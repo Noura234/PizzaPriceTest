@@ -2,7 +2,7 @@
 {
     public class Merguez : Ingredient
     {
-        public Merguez() : base(5, "Meat")
+        public Merguez() : base(5, IngredientCategoryEnum.Meat)
         {
 
         }

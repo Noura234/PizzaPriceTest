@@ -2,7 +2,7 @@
 {
     public class FourmeAmbert : Ingredient
     {
-        public FourmeAmbert() : base(4, "Cheese")
+        public FourmeAmbert() : base(4, IngredientCategoryEnum.Cheese)
         {
 
         }

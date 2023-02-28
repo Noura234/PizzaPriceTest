@@ -2,7 +2,7 @@
 {
     public class Mozarella : Ingredient
     {
-        public Mozarella() : base(2, "Cheese")
+        public Mozarella() : base(2, IngredientCategoryEnum.Cheese)
         {
         }
     }

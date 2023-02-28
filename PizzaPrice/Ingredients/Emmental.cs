@@ -2,7 +2,7 @@
 {
     public class Emmental : Ingredient
     {
-        public Emmental() : base(2, "Cheese")
+        public Emmental() : base(2, IngredientCategoryEnum.Cheese)
         {
         }
     }

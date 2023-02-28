@@ -2,7 +2,7 @@
 {
     public class Goat : Ingredient
     {
-        public Goat() : base(4, "Cheese")
+        public Goat() : base(4, IngredientCategoryEnum.Cheese)
         {
         }
     }
