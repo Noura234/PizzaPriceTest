@@ -1,3 +1,4 @@
+using Moq;
 using PizzaPrice.Pizzas;
 
 namespace PizzaPrice.Tests
@@ -5,9 +6,11 @@ namespace PizzaPrice.Tests
     public class PizzaPriceTests
     {
         private PizzaService pizzaService;
+        private Mock<IServiceProvider> serviceProvider;
         public PizzaPriceTests()
         {
-            pizzaService = new PizzaService();
+            serviceProvider= new Mock<IServiceProvider>();
+            pizzaService = new PizzaService(serviceProvider.Object);
         }
 
         [Fact]
@@ -15,6 +18,8 @@ namespace PizzaPrice.Tests
         {
             //arrange
             var pizzaName = PizzaNameEnum.FourCheeseTomato;
+            serviceProvider.Setup(sp => sp.GetService(typeof(FourCheeseTomato)))
+                .Returns(new FourCheeseTomato());
 
             //act
             var pizzaPrice = pizzaService.GetPizzaPrice(pizzaName); 
@@ -28,6 +33,8 @@ namespace PizzaPrice.Tests
         {
             //arrange
             var pizzaName = PizzaNameEnum.FourCheeseFreshCream;
+            serviceProvider.Setup(sp => sp.GetService(typeof(FourCheeseFreshCream)))
+                .Returns(new FourCheeseFreshCream());
 
             //act
             var pizzaPrice = pizzaService.GetPizzaPrice(pizzaName);
@@ -41,6 +48,8 @@ namespace PizzaPrice.Tests
         {
             //arrange
             var pizzaName = PizzaNameEnum.BPM;
+            serviceProvider.Setup(sp => sp.GetService(typeof(BPM)))
+                .Returns(new BPM());
 
             //act
             var pizzaPrice = pizzaService.GetPizzaPrice(pizzaName);
@@ -54,6 +63,8 @@ namespace PizzaPrice.Tests
         {
             //arrange
             var pizzaName = PizzaNameEnum.PepperoniLovers;
+            serviceProvider.Setup(sp => sp.GetService(typeof(PepperoniLovers)))
+                .Returns(new PepperoniLovers());
 
             //act
             var pizzaPrice = pizzaService.GetPizzaPrice(pizzaName);
@@ -67,6 +78,8 @@ namespace PizzaPrice.Tests
         {
             //arrange
             var pizzaName = PizzaNameEnum.Queen;
+            serviceProvider.Setup(sp => sp.GetService(typeof(Queen)))
+                .Returns(new Queen());
 
             //act
             var pizzaPrice = pizzaService.GetPizzaPrice(pizzaName);
@@ -80,6 +93,8 @@ namespace PizzaPrice.Tests
         {
             //arrange
             var pizzaName = PizzaNameEnum.Mountaineer;
+            serviceProvider.Setup(sp => sp.GetService(typeof(Mountaineer)))
+                .Returns(new Mountaineer());
 
             //act
             var pizzaPrice = pizzaService.GetPizzaPrice(pizzaName);
@@ -93,6 +108,8 @@ namespace PizzaPrice.Tests
         {
             //arrange
             var pizzaName = PizzaNameEnum.Supreme;
+            serviceProvider.Setup(sp => sp.GetService(typeof(Supreme)))
+                .Returns(new Supreme());
 
             //act
             var pizzaPrice = pizzaService.GetPizzaPrice(pizzaName);

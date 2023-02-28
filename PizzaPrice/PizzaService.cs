@@ -1,53 +1,41 @@
-﻿using PizzaPrice.Ingredients;
-using PizzaPrice.Pizzas;
+﻿using PizzaPrice.Pizzas;
 
 namespace PizzaPrice
 {
-    public class PizzaService
+    public class PizzaService : IPizzaService
     {
-        public PizzaService()
+        private readonly IServiceProvider _serviceProvider;
+        private readonly Dictionary<PizzaNameEnum, Type> _pizzaKindByName = new Dictionary<PizzaNameEnum, Type>()
         {
+            [PizzaNameEnum.FourCheeseTomato] = typeof(FourCheeseTomato),
+            [PizzaNameEnum.FourCheeseFreshCream] = typeof(FourCheeseFreshCream),
+            [PizzaNameEnum.BPM] = typeof(BPM),
+            [PizzaNameEnum.PepperoniLovers] = typeof(PepperoniLovers),
+            [PizzaNameEnum.Queen] = typeof(Queen),
+            [PizzaNameEnum.Mountaineer] = typeof(Mountaineer),
+            [PizzaNameEnum.Supreme] = typeof(Supreme)
+        };
+
+        public PizzaService(IServiceProvider serviceProvider)
+        {
+            this._serviceProvider = serviceProvider;
         }
 
         public decimal GetPizzaPrice(PizzaNameEnum pizzaName)
         {
-            var pizzaPrice = 0m;
-            if (pizzaName.Equals(PizzaNameEnum.FourCheeseTomato))
+            return GetPizza(pizzaName).GetIngredientsPrice();
+        }
+
+        private Pizza GetPizza(PizzaNameEnum pizzaName)
+        {
+            if (_pizzaKindByName.TryGetValue(pizzaName, out Type pizzaClass))
             {
-                var pizza = new FourCheeseTomato();
-                pizzaPrice = pizza.GetIngredientsPrice();
+                if (_serviceProvider.GetService(pizzaClass) is Pizza pizza)
+                {
+                    return pizza;
+                }
             }
-            else if (pizzaName.Equals(PizzaNameEnum.FourCheeseFreshCream))
-            {
-                var pizza = new FourCheeseFreshCream();
-                pizzaPrice = pizza.GetIngredientsPrice();
-            }
-            else if (pizzaName.Equals(PizzaNameEnum.BPM))
-            {
-                var pizza = new BPM();
-                pizzaPrice = pizza.GetIngredientsPrice();
-            }
-            else if (pizzaName.Equals(PizzaNameEnum.PepperoniLovers))
-            {
-                var pizza = new PepperoniLovers();
-                pizzaPrice = pizza.GetIngredientsPrice();
-            }
-            else if (pizzaName.Equals(PizzaNameEnum.Queen))
-            {
-                var pizza = new Queen();
-                pizzaPrice = pizza.GetIngredientsPrice();
-            }
-            else if (pizzaName.Equals(PizzaNameEnum.Mountaineer))
-            {
-                var pizza = new Mountaineer();
-                pizzaPrice = pizza.GetIngredientsPrice();
-            }
-            else if (pizzaName.Equals(PizzaNameEnum.Supreme))
-            {
-                var pizza = new Supreme();
-                pizzaPrice = pizza.GetIngredientsPrice();
-            }
-            return pizzaPrice;
+            throw new InvalidOperationException($"Could not find the matching type for pizzaname {pizzaName}");
         }
     }
 }
