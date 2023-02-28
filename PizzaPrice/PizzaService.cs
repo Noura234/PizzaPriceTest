@@ -36,6 +36,18 @@ namespace PizzaPrice
                 });
                 pizzaPrice = pizza.GetIngredientsPrice();
             }
+            else if (pizzaName.Equals(PizzaNameEnum.BPM))
+            {
+                var pizza = new BPM(new List<Ingredient>()
+                {
+                    new Barbecue(),
+                    new Mozarella(),
+                    new Beef(),
+                    new RoastChicken(),
+                    new Merguez(),
+                });
+                pizzaPrice = pizza.GetIngredientsPrice();
+            }
             return pizzaPrice;
         }
     }

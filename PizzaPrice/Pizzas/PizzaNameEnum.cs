@@ -8,6 +8,6 @@ namespace PizzaPrice.Pizzas
         FourCheeseTomato,
         [Description("4 Fromages avec crème fraîche")]
         FourCheeseFreshCream,
-
+        BPM,
     }
 }

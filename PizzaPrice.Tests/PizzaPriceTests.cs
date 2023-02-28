@@ -31,5 +31,19 @@ namespace PizzaPrice.Tests
             //assert
             Assert.Equal(13.5m, pizzaPrice);
         }
+
+        [Fact]
+        public void BPMPizzaCost_Should_Return_Ingredients_Prices()
+        {
+            //arrange
+            var pizzaName = PizzaNameEnum.BPM;
+            var pizzaService = new PizzaService();
+
+            //act
+            var pizzaPrice = pizzaService.GetPizzaPrice(pizzaName);
+
+            //assert
+            Assert.Equal(2 + 2 + 4.5m + 6 + 5, pizzaPrice);
+        }
     }
 }
