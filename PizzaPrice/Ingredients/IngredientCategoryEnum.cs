@@ -5,6 +5,9 @@
         Sauce,
         Meat,
         Cheese,
-        Vegetable
+        Vegetable,
+        Honey,
+        Fish,
+        PineApple
     }
 }

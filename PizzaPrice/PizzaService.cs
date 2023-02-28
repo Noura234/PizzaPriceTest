@@ -13,7 +13,15 @@ namespace PizzaPrice
             [PizzaNameEnum.PepperoniLovers] = typeof(PepperoniLovers),
             [PizzaNameEnum.Queen] = typeof(Queen),
             [PizzaNameEnum.Mountaineer] = typeof(Mountaineer),
-            [PizzaNameEnum.Supreme] = typeof(Supreme)
+            [PizzaNameEnum.Supreme] = typeof(Supreme),
+            [PizzaNameEnum.Raclette] = typeof(Raclette),
+            [PizzaNameEnum.HoneyGoat] = typeof(HoneyGoat),
+            [PizzaNameEnum.Nordic] = typeof(Nordic),
+            [PizzaNameEnum.Campagnard] = typeof(Campagnard),
+            [PizzaNameEnum.Samurai] = typeof(Samurai),
+            [PizzaNameEnum.ChikenPermesan] = typeof(ChikenPermesan),
+            [PizzaNameEnum.Vegetarian] = typeof(Vegetarian),
+            [PizzaNameEnum.HawaiianHam] = typeof(HawaiianHam)
         };
 
         public PizzaService(IServiceProvider serviceProvider)

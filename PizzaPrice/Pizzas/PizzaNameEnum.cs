@@ -15,5 +15,13 @@ namespace PizzaPrice.Pizzas
         Queen,
         Mountaineer,
         Supreme,
+        Raclette,
+        HoneyGoat,
+        Nordic,
+        Campagnard,
+        Samurai,
+        ChikenPermesan,
+        Vegetarian,
+        HawaiianHam,
     }
 }

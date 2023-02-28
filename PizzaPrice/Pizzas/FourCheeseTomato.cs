@@ -5,7 +5,7 @@ namespace PizzaPrice.Pizzas
     public class FourCheeseTomato : Pizza
     {
         public FourCheeseTomato() : base(new List<Ingredient>() {
-            new Tomato(),
+            new TomatoSauce(),
             new Mozarella(),
             new Goat(),
             new Emmental(),

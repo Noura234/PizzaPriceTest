@@ -6,7 +6,7 @@ namespace PizzaPrice.Pizzas
     {
         public Queen() : base(new List<Ingredient>
         {
-            new Tomato(),
+            new TomatoSauce(),
             new Mozarella(),
             new Ham(),
             new Mushroom()
