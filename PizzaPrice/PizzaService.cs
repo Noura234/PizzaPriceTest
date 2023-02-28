@@ -9,9 +9,10 @@ namespace PizzaPrice
         {
         }
 
-        public decimal GetPizzaPrice(string pizzaName)
+        public decimal GetPizzaPrice(PizzaNameEnum pizzaName)
         {
-            if (pizzaName.Equals("FourCheeseTomato"))
+            var pizzaPrice = 0m;
+            if (pizzaName.Equals(PizzaNameEnum.FourCheeseTomato))
             {
                 var pizza = new FourCheeseTomato(new List<Ingredient>()
                 {
@@ -21,10 +22,9 @@ namespace PizzaPrice
                     new Emmental(),
                     new FourmeAmbert(),
                 });
-                var pizzaPrice = pizza.GetIngredientsPrice();
-                return pizzaPrice;
+                pizzaPrice = pizza.GetIngredientsPrice();
             }
-            else if (pizzaName.Equals("FourCheeseFreshCream"))
+            else if (pizzaName.Equals(PizzaNameEnum.FourCheeseFreshCream))
             {
                 var pizza = new FourCheeseFreshCream(new List<Ingredient>()
                 {
@@ -34,10 +34,9 @@ namespace PizzaPrice
                     new Emmental(),
                     new FourmeAmbert(),
                 });
-                var pizzaPrice = pizza.GetIngredientsPrice();
-                return pizzaPrice;
+                pizzaPrice = pizza.GetIngredientsPrice();
             }
-            return 0;
+            return pizzaPrice;
         }
     }
 }

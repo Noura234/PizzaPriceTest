@@ -1,3 +1,5 @@
+using PizzaPrice.Pizzas;
+
 namespace PizzaPrice.Tests
 {
     public class PizzaPriceTests
@@ -6,7 +8,7 @@ namespace PizzaPrice.Tests
         public void FourCheeseTomatoPizzaCost_Should_Return_Ingredients_Prices_13()
         {
             //arrange
-            var pizzaName = "FourCheeseTomato";
+            var pizzaName = PizzaNameEnum.FourCheeseTomato;
             var pizzaService = new PizzaService();
 
             //act
@@ -20,7 +22,7 @@ namespace PizzaPrice.Tests
         public void FourCheeseFreshCreamPizzaCost_Should_Return_Ingredients_Prices_13_5()
         {
             //arrange
-            var pizzaName = "FourCheeseFreshCream";
+            var pizzaName = PizzaNameEnum.FourCheeseFreshCream;
             var pizzaService = new PizzaService();
 
             //act
