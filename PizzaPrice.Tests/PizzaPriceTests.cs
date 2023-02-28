@@ -4,12 +4,17 @@ namespace PizzaPrice.Tests
 {
     public class PizzaPriceTests
     {
+        private PizzaService pizzaService;
+        public PizzaPriceTests()
+        {
+            pizzaService = new PizzaService();
+        }
+
         [Fact]
         public void FourCheeseTomatoPizzaCost_Should_Return_Ingredients_Prices()
         {
             //arrange
             var pizzaName = PizzaNameEnum.FourCheeseTomato;
-            var pizzaService = new PizzaService();
 
             //act
             var pizzaPrice = pizzaService.GetPizzaPrice(pizzaName); 
@@ -23,7 +28,6 @@ namespace PizzaPrice.Tests
         {
             //arrange
             var pizzaName = PizzaNameEnum.FourCheeseFreshCream;
-            var pizzaService = new PizzaService();
 
             //act
             var pizzaPrice = pizzaService.GetPizzaPrice(pizzaName);
@@ -37,7 +41,6 @@ namespace PizzaPrice.Tests
         {
             //arrange
             var pizzaName = PizzaNameEnum.BPM;
-            var pizzaService = new PizzaService();
 
             //act
             var pizzaPrice = pizzaService.GetPizzaPrice(pizzaName);
@@ -51,7 +54,6 @@ namespace PizzaPrice.Tests
         {
             //arrange
             var pizzaName = PizzaNameEnum.PepperoniLovers;
-            var pizzaService = new PizzaService();
 
             //act
             var pizzaPrice = pizzaService.GetPizzaPrice(pizzaName);
@@ -65,7 +67,6 @@ namespace PizzaPrice.Tests
         {
             //arrange
             var pizzaName = PizzaNameEnum.Queen;
-            var pizzaService = new PizzaService();
 
             //act
             var pizzaPrice = pizzaService.GetPizzaPrice(pizzaName);
@@ -79,7 +80,6 @@ namespace PizzaPrice.Tests
         {
             //arrange
             var pizzaName = PizzaNameEnum.Mountaineer;
-            var pizzaService = new PizzaService();
 
             //act
             var pizzaPrice = pizzaService.GetPizzaPrice(pizzaName);
@@ -93,7 +93,6 @@ namespace PizzaPrice.Tests
         {
             //arrange
             var pizzaName = PizzaNameEnum.Supreme;
-            var pizzaService = new PizzaService();
 
             //act
             var pizzaPrice = pizzaService.GetPizzaPrice(pizzaName);
