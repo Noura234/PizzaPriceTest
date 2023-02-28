@@ -2,18 +2,15 @@
 
 namespace PizzaPrice.Pizzas
 {
-    public class BPM
+    public class BPM : Pizza
     {
-        private List<Ingredient> _ingredients;
-
-        public BPM(List<Ingredient> ingredients)
+        public BPM() : base(new List<Ingredient>() {
+            new Barbecue(),
+            new Mozarella(),
+            new Beef(),
+            new RoastChicken(),
+            new Merguez() })
         {
-            this._ingredients = ingredients;
-        }
-
-        public decimal GetIngredientsPrice()
-        {
-            return _ingredients.Select(i => i.GetPrice()).Sum();
         }
     }
 }

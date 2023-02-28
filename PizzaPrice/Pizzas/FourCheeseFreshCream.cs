@@ -2,17 +2,15 @@
 
 namespace PizzaPrice.Pizzas
 {
-    public class FourCheeseFreshCream
+    public class FourCheeseFreshCream : Pizza
     {
-        private List<Ingredient> _ingredients;
-
-        public FourCheeseFreshCream(List<Ingredient> ingredients)
+        public FourCheeseFreshCream() : base(new List<Ingredient>() {
+            new FreshCream(),
+            new Mozarella(),
+            new Goat(),
+            new Emmental(),
+            new FourmeAmbert() })
         {
-            this._ingredients = ingredients ?? throw new ArgumentNullException(nameof(ingredients));
-        }
-        public decimal GetIngredientsPrice()
-        {
-            return _ingredients.Select(i => i.GetPrice()).Sum();
         }
     }
 }
