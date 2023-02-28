@@ -4,6 +4,7 @@
     {
         Sauce,
         Meat,
-        Cheese
+        Cheese,
+        Vegetable
     }
 }

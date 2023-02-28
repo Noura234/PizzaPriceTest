@@ -27,6 +27,26 @@ namespace PizzaPrice
                 var pizza = new BPM();
                 pizzaPrice = pizza.GetIngredientsPrice();
             }
+            else if (pizzaName.Equals(PizzaNameEnum.PepperoniLovers))
+            {
+                var pizza = new PepperoniLovers();
+                pizzaPrice = pizza.GetIngredientsPrice();
+            }
+            else if (pizzaName.Equals(PizzaNameEnum.Queen))
+            {
+                var pizza = new Queen();
+                pizzaPrice = pizza.GetIngredientsPrice();
+            }
+            else if (pizzaName.Equals(PizzaNameEnum.Mountaineer))
+            {
+                var pizza = new Mountaineer();
+                pizzaPrice = pizza.GetIngredientsPrice();
+            }
+            else if (pizzaName.Equals(PizzaNameEnum.Supreme))
+            {
+                var pizza = new Supreme();
+                pizzaPrice = pizza.GetIngredientsPrice();
+            }
             return pizzaPrice;
         }
     }
